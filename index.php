@@ -1,32 +1,58 @@
-<?php   
+<?php
+    // DEFINICION DE LA CLASE PRODUCTO
+    class Producto{
+        // DEFINICION DE ATRIBUTOS
+        public $precio;        
+        public $nombre;
+        public $disponible;
 
+    // DEFINICION DE METODOS
 
-class Producto{
-//DEFINICION DE PRODUCTOS
-    public $precio = 2.56;
-    public string $nombre = "Nombre";
-    public bool $disponible = true;
+    public function mostrarNombreProducto() : void{
+        echo $this->nombre;
+    }
 
-//DEFINICION DE METODOS
+    public function mostrarPrecioProducto() : void{
+        echo $this->precio;
+    }
+    public function mostrarDisponibleProducto() : void{
+        if ($this->disponible){
+         echo "Disponible";
+        }else{
+            echo "No Disponible ";
+        }
+        
+    }
 
-public function mostrarNombreProcto {} {
-    echo $this->nombre;
 }
 
-}
-//CREACION DE UN OBJETO
-//CREAR INSTANCIA
+    // CREACIÓN DE UN OBJETO
+    // CREAR UNA INSTANCIA
+        $mesa = new Producto(); 
 
-$mesa = new Producto ();
+            $mesa->nombre = "Mesa";
+            $mesa->precio = 500;
+            $mesa->disponible = true;
 
-$mesa->nombre = "Mesa";
-$mesa->precio = 500;
-$mesa->disponible = true;
+        $silla = new Producto(); 
 
-echo "<pre>";
-var_dump($producto1);
-echo "</pre>";
+            $silla->nombre = "Silla grande";
+            $silla->precio = 100;
+            $silla->disponible = false;
 
-$mesa->mostrarNombreProducto ();
-$silla->mostrarNombreProducto ();
- ?>
+        echo "<pre>";
+        var_dump($mesa);
+        echo "</pre>";
+        echo "<pre>";
+        var_dump($silla);
+        echo "</pre>";
+
+        $mesa->mostrarNombreProducto();
+        $mesa->mostrarPrecioProducto();
+        $mesa->mostrarDisponibleProducto();
+        echo "<br>". "<br>";
+        $silla->mostrarNombreProducto();
+        $silla->mostrarPrecioProducto();
+        $silla->mostrarDisponibleProducto();
+
+?>
